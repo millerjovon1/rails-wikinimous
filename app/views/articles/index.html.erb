@@ -1,0 +1,12 @@
+<h1>Movies</h1>
+<div class="container">
+  <h1>Movies</h1>
+  <ul>
+    <%@articles.each do |article| %>
+      <div class="d-flex">
+        <li ><%= link_to article.title ,article_path(article)%></li>
+        <p><%= link_to '🗑️', article_path(article), class: 'btn btn-light', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }  %></p>
+      </div>
+    <% end %>
+  </ul>
+</div>

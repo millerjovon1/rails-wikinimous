@@ -1,0 +1,15 @@
+<% @article.errors.full_messages.each do |msg| %>
+  <p class='text-danger'><%= msg %></p>
+<% end %>
+<!-- <form action="/restaurants" method="post">
+  </form> -->
+<!-- form_with is expecting an instance -->
+<!-- form_with builds the path and method for us -->
+<%= form_with model: @article do |f| %>
+  <!-- <input type="text" name="name"> -->
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+  <%= f.label :content %>
+  <%= f.text_field :content, class: 'form-control' %>
+  <%= f.submit class: 'btn btn-primary mt-2' %>
+<% end %>
